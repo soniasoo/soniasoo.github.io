@@ -1,9 +1,575 @@
-<html>
- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyTube</title>
+    <link rel="stylesheet" href="style.css">
+
+
+    <link rel="shortcut icon" href="favicon.ico"/>
+
+
+    <script src="https://kit.fontawesome.com/9674f5e515.js" crossorigin="anonymous"></script>
+</head>
+
 <body>
-  <h1>S.</h1>
-  <p>Welcome to my website!</p>
-  <img src="https://content.codecademy.com/articles/github-pages-via-web-app/happy-ice-cream.gif" />
+    <div class="overlay hidden"></div>
+
+    <!-- TOP NAVIGATION BAR -->
+    <nav>
+        <div class="nav-left">
+            <img src="images/menu-icon.png" alt="" class="round-icon menu-icon" onclick="toggleSideNav()">
+            <a href="index.html"><img src="images/logo.png" class="logo" alt=""></a>
+        </div>
+
+        <div class="nav-middle">
+            <div class="search-box">
+                <input type="text" placeholder="Search">
+            </div>
+            <button><img src="images/icons8-search.png" alt=""></button>
+            <img src="images/microphone-icon.png" alt="" class="round-icon">
+
+        </div>
+
+        <div class="nav-right">
+            <ul>
+                <li class="round-icon"><img src="images/video-icon.png" alt=""></li>
+                <li class="round-icon"><img src="images/bell-icon.png" alt=""></li>
+            </ul>
+            <div class="user-icon">
+                <img src="images/user.jpg" alt="">
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- CONTENT -->
+    <div class="container">
+        
+        <!-- LEFT SIDEBAR OPT 1 -->
+        <div class="left-sidebar-small">
+            <a class="icon" href="#"><img src="images/home.png" alt="">Home</a>
+            <a class="icon" href="#"><img src="images/shorts.png" alt="">Shorts</a>
+            <a class="icon" href="#"><img src="images/subscriptions.png" alt="">Subscriptions</a>
+            <a class="icon" href="#"><img src="images/library.png" alt="">Library</a>
+        </div>
+        
+        <!-- LEFT SIDEBAR OPT 2 -->
+        <div class="left-sidebar">
+            <div class="nav-left">
+                <img src="images/menu-icon.png" alt="" class="round-icon menu-icon" onclick="toggleSideNav()">
+                <a href="index.html"><img src="images/logo.png" class="logo" alt=""></a>
+            </div>
+
+            <div class="links">
+                <a href="#" class="bold"><img src="images/home.png" alt="">Home</a>
+                <a href="#"><img src="images/shorts.png" alt="">Shorts</a>
+                <a href="#"><img src="images/subscriptions.png" alt="">Subscriptions</a>
+            </div>
+            <hr>
+            <div id="playlists" class="links">
+                <a href="#"><img src="images/library.png" alt="">Library</a>
+                <a href="#"><img src="images/history.png" alt="">History</a>
+                <a href="#"><img src="images/videos.png" alt="">Your Videos</a>
+                <a href="#"><img src="images/watchlater.png" alt="">Watch later</a>
+                <a href="#"><img src="images/like.png" alt="">Liked videos</a>
+                <a id="show-playlists" onclick="showPlaylists()" href="#"><img src="images/arrow-down.png" alt="">Show more</a>
+                <a class="playl hidden" href="#"><img src="images/playlist.png" alt="">My Playlist 1</a>
+                <a class="playl hidden" href="#"><img src="images/playlist.png" alt="">My Playlist 2</a>
+                <a class="playl hidden" href="#"><img src="images/playlist.png" alt="">My Playlist 3</a>
+            </div>
+            <hr>
+            <div id="subscriptions" class="links">
+                <p>Subscriptions</p>
+                <a href="#"><img src="images/channel1.jpg" alt="" class="subscription-img">Artsy</a>
+                <a href="#"><img src="images/channel2.jpg" alt="" class="subscription-img">Photography</a>
+                <a href="#"><img src="images/channel3.jpg" alt="" class="subscription-img">The Science Guys</a>
+                <a href="#"><img src="images/channel4.jpg" alt="" class="subscription-img">Digitalz</a>
+                <a id="show-subscript" onclick="showSubscriptions()" href="#"><img src="images/arrow-down.png" alt="">Show 2 more</a>
+                <a class="subscript hidden" href="#"><img src="images/channel5.jpg" alt="" class="subscription-img">MySweetEscape</a>
+                <a class="subscript hidden" href="#"><img src="images/channel6.jpg" alt="" class="subscription-img">Move with Sam</a>
+            </div>
+            <hr>
+            <div class="links">
+                <p>Explore</p>
+                <a href="#"><img src="images/trending.png" alt="">Trending</a>
+                <a href="#"><img src="images/music.png" alt="">Music</a>
+                <a href="#"><img src="images/gaming.png" alt="">Gaming</a>
+                <a href="#"><img src="images/sports.png" alt="">Sports</a>
+            </div>
+            <hr>
+            <div class="links">
+                <p>More from YTube</p>
+                <a href="#"><img src="images/yt-premium.png" alt="">YTube Premium</a>
+                <a href="#"><img src="images/yt-studio.png" alt="">YTube Studio</a>
+                <a href="#"><img src="images/yt-music.png" alt="">YTube Music</a>
+                <a href="#"><img src="images/yt-kids.png" alt="">YTube Kids</a>
+            </div>
+            <hr>
+            <div class="links">
+                <a href="#"><img src="images/settings.png" alt="">Settings</a>
+                <a href="#"><img src="images/report.png" alt="">Report history</a>
+                <a href="#"><img src="images/help.png" alt="">Help</a>
+                <a href="#"><img src="images/feedback.png" alt="">Send feedback</a>
+            </div>
+            <hr>
+            <div class="footer links">
+                <p>Copyright 2023 - Sonia S.</p>
+            </div>
+        </div>
+        
+
+        <!-- MAIN CONTENT -->
+        <div class="main-container">
+
+            <!-- Genres -->
+            <div class="genre-list">
+                <a href="#">All</a>
+                <a href="#">Mixes</a>
+                <a href="#">Music</a>
+                <a href="#">Live</a>
+                <a href="#">Game Shows</a>
+                <!--<a href="#">Arts</a>
+                <a href="#">Cooking</a>
+                <a href="#">Watched</a>
+                <a href="#">New</a> -->
+            </div>
+
+
+            <div class="main-content">
+
+                <!-- Videos -->
+                <div class="video-grid">
+                    <div class="video">
+                        <div class="thumbnail">
+                            <a href="video.html">
+                                <img src="images/thumbnail1.jpg" alt="">  
+                                <div class="thumbnail-overlay">
+                                    <span>17:45</span>
+                                </div>
+                            </a>
+                            
+                        </div>
+                        <div class="thumbnail-details">
+                            <div class="profile-image">
+                                <img src="images/channel5.jpg" alt="">
+                            </div> 
+                            <div class="description">
+                                <h4>Van Life - A Day in our Life</h4>
+                                <p>MySweetEscape</p>
+                                <span>347K views 2 days ago</span>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="video">
+                        <div class="thumbnail">
+                            <a href="video.html">
+                                <img src="images/thumbnail2.jpg" alt=""> 
+                                <div class="thumbnail-overlay">
+                                    <span>31:25</span>
+                                </div>  
+                            </a>
+                        </div>
+                        <div class="thumbnail-details">
+                            <div class="profile-image">
+                                <img src="images/channel6.jpg" alt="">
+                            </div>
+                            <div class="description">
+                                <h4>30 min Full Body Workout</h4>
+                                <p>Move with Sam</p>
+                                <span>722K views 2 months ago</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video">
+                        <div class="thumbnail">
+                            <a href="video.html">
+                                <img src="images/thumbnail3.jpg" alt="">
+                                <div class="thumbnail-overlay">
+                                    <span>13:55</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="thumbnail-details">
+                            <div class="profile-image">
+                                <img src="images/channel3.jpg" alt="">
+                            </div>
+                            <div class="description">
+                                <h4>Let's explore Space Together</h4>
+                                <p>The Science Guys</p>
+                                <span>604K views 3 weeks ago</span>
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="video">
+                        <div class="thumbnail">
+                            <a href="video.html">
+                                <img src="images/thumbnail4.jpg" alt="">
+                                <div class="thumbnail-overlay">
+                                    <span>20:01</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="thumbnail-details">
+                            <div class="profile-image">
+                                <img src="images/channel5.jpg" alt="">
+                            </div>
+                            <div class="description">
+                                <h4>Moving towards new Adventures</h4>
+                                <p>MySweetEscape</p>
+                                <span>500K views 3 months ago</span>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="video">
+                        <div class="thumbnail">
+                            <a href="video.html">
+                                <img src="images/thumbnail5.jpg" alt="">
+                                <div class="thumbnail-overlay">
+                                    <span>21:55</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="thumbnail-details">
+                            <div class="profile-image">
+                                <img src="images/channel4.jpg" alt="">
+                            </div>
+                            <div class="description">
+                                <h4>Let's try Pour Art Together</h4>
+                                <p>Artsy</p>
+                                <span>20K views 4 days ago</span>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="video">
+                        <div class="thumbnail">
+                            <a href="video.html">
+                                <img src="images/thumbnail6.jpg" alt="">
+                                <div class="thumbnail-overlay">
+                                    <span>40:12</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="thumbnail-details">
+                            <div class="profile-image">
+                                <img src="images/channel2.jpg" alt="">
+                            </div>
+                            <div class="description">
+                                <h4>Photography Basics</h4>
+                                <p>Photography</p>
+                                <span>700K views 1 year ago</span>
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="video">
+                        <div class="thumbnail">
+                            <a href="video.html">
+                                <img src="images/thumbnail1.jpg" alt="">  
+                                <div class="thumbnail-overlay">
+                                    <span>17:45</span>
+                                </div>
+                            </a>
+                            
+                        </div>
+                        <div class="thumbnail-details">
+                            <div class="profile-image">
+                                <img src="images/channel5.jpg" alt="">
+                            </div> 
+                            <div class="description">
+                                <h4>Van Life - A Day in our Life</h4>
+                                <p>MySweetEscape</p>
+                                <span>347K views 2 days ago</span>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="video">
+                        <div class="thumbnail">
+                            <a href="video.html">
+                                <img src="images/thumbnail2.jpg" alt=""> 
+                                <div class="thumbnail-overlay">
+                                    <span>31:25</span>
+                                </div>  
+                            </a>
+                        </div>
+                        <div class="thumbnail-details">
+                            <div class="profile-image">
+                                <img src="images/channel6.jpg" alt="">
+                            </div>
+                            <div class="description">
+                                <h4>30 min Full Body Workout</h4>
+                                <p>Move with Sam</p>
+                                <span>722K views 2 months ago</span>
+                            </div>
+                        </div>
+                    </div>                
+                </div>
+
+                <hr>
+
+                <!-- Shorts -->
+                <div class="shorts-container">
+                    <div class="section-title">
+                        <img src="images/shorts.png" alt="">
+                    <span>Shorts</span>
+                    </div>
+                    <div class="shorts-gallery">
+                        <div class="shorts">
+                            <div class="shorts-thumbnail">
+                                <a href="#">
+                                    <img src="images/short1.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="thumbnail-details">
+                                <div class="description">
+                                    <h4>Photography Basics</h4>
+                                    <span>700K views</span>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="shorts">
+                            <div class="shorts-thumbnail">
+                                <a href="#">
+                                    <img src="images/short1.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="thumbnail-details">
+                                <div class="description">
+                                    <h4>Photography Basics</h4>
+                                    <span>700K views</span>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="shorts">
+                            <div class="shorts-thumbnail">
+                                <a href="#">
+                                    <img src="images/short1.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="thumbnail-details">
+                                <div class="description">
+                                    <h4>Photography Basics</h4>
+                                    <span>700K views</span>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="shorts">
+                            <div class="shorts-thumbnail">
+                                <a href="#">
+                                    <img src="images/short1.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="thumbnail-details">
+                                <div class="description">
+                                    <h4>Photography Basics</h4>
+                                    <span>700K views</span>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="shorts">
+                            <div class="shorts-thumbnail">
+                                <a href="#">
+                                    <img src="images/short1.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="thumbnail-details">
+                                <div class="description">
+                                    <h4>Photography Basics</h4>
+                                    <span>700K views</span>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="shorts">
+                            <div class="shorts-thumbnail">
+                                <a href="#">
+                                    <img src="images/short1.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="thumbnail-details">
+                                <div class="description">
+                                    <h4>Photography Basics</h4>
+                                    <span>700K views</span>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+
+                <hr>
+                
+                <!-- Videos -->
+                <div class="video-grid">
+                    <div class="video">
+                        <div class="thumbnail">
+                            <a href="video.html">
+                                <img src="images/thumbnail1.jpg" alt="">  
+                                <div class="thumbnail-overlay">
+                                    <span>17:45</span>
+                                </div>
+                            </a>
+                            
+                        </div>
+                        <div class="thumbnail-details">
+                            <div class="profile-image">
+                                <img src="images/channel5.jpg" alt="">
+                            </div> 
+                            <div class="description">
+                                <h4>Van Life - A Day in our Life</h4>
+                                <p>MySweetEscape</p>
+                                <span>347K views 2 days ago</span>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="video">
+                        <div class="thumbnail">
+                            <a href="video.html">
+                                <img src="images/thumbnail2.jpg" alt=""> 
+                                <div class="thumbnail-overlay">
+                                    <span>31:25</span>
+                                </div>  
+                            </a>
+                        </div>
+                        <div class="thumbnail-details">
+                            <div class="profile-image">
+                                <img src="images/channel6.jpg" alt="">
+                            </div>
+                            <div class="description">
+                                <h4>30 min Full Body Workout</h4>
+                                <p>Move with Sam</p>
+                                <span>722K views 2 months ago</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video">
+                        <div class="thumbnail">
+                            <a href="video.html">
+                                <img src="images/thumbnail3.jpg" alt="">
+                                <div class="thumbnail-overlay">
+                                    <span>13:55</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="thumbnail-details">
+                            <div class="profile-image">
+                                <img src="images/channel3.jpg" alt="">
+                            </div>
+                            <div class="description">
+                                <h4>Let's explore Space Together</h4>
+                                <p>The Science Guys</p>
+                                <span>604K views 3 weeks ago</span>
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="video">
+                        <div class="thumbnail">
+                            <a href="video.html">
+                                <img src="images/thumbnail4.jpg" alt="">
+                                <div class="thumbnail-overlay">
+                                    <span>20:01</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="thumbnail-details">
+                            <div class="profile-image">
+                                <img src="images/channel5.jpg" alt="">
+                            </div>
+                            <div class="description">
+                                <h4>Moving towards new Adventures</h4>
+                                <p>MySweetEscape</p>
+                                <span>500K views 3 months ago</span>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="video">
+                        <div class="thumbnail">
+                            <a href="video.html">
+                                <img src="images/thumbnail5.jpg" alt="">
+                                <div class="thumbnail-overlay">
+                                    <span>21:55</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="thumbnail-details">
+                            <div class="profile-image">
+                                <img src="images/channel4.jpg" alt="">
+                            </div>
+                            <div class="description">
+                                <h4>Let's try Pour Art Together</h4>
+                                <p>Artsy</p>
+                                <span>20K views 4 days ago</span>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="video">
+                        <div class="thumbnail">
+                            <a href="video.html">
+                                <img src="images/thumbnail6.jpg" alt="">
+                                <div class="thumbnail-overlay">
+                                    <span>40:12</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="thumbnail-details">
+                            <div class="profile-image">
+                                <img src="images/channel2.jpg" alt="">
+                            </div>
+                            <div class="description">
+                                <h4>Photography Basics</h4>
+                                <p>Photography</p>
+                                <span>700K views 1 year ago</span>
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="video">
+                        <div class="thumbnail">
+                            <a href="video.html">
+                                <img src="images/thumbnail1.jpg" alt="">  
+                                <div class="thumbnail-overlay">
+                                    <span>17:45</span>
+                                </div>
+                            </a>
+                            
+                        </div>
+                        <div class="thumbnail-details">
+                            <div class="profile-image">
+                                <img src="images/channel5.jpg" alt="">
+                            </div> 
+                            <div class="description">
+                                <h4>Van Life - A Day in our Life</h4>
+                                <p>MySweetEscape</p>
+                                <span>347K views 2 days ago</span>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="video">
+                        <div class="thumbnail">
+                            <a href="video.html">
+                                <img src="images/thumbnail2.jpg" alt=""> 
+                                <div class="thumbnail-overlay">
+                                    <span>31:25</span>
+                                </div>  
+                            </a>
+                        </div>
+                        <div class="thumbnail-details">
+                            <div class="profile-image">
+                                <img src="images/channel6.jpg" alt="">
+                            </div>
+                            <div class="description">
+                                <h4>30 min Full Body Workout</h4>
+                                <p>Move with Sam</p>
+                                <span>722K views 2 months ago</span>
+                            </div>
+                        </div>
+                    </div>                
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <script src="script.js"></script>
 </body>
- 
 </html>
