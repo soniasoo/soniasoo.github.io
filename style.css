@@ -327,22 +327,17 @@ hr {
     overflow: hidden;
 }
 
+
+
 .video {
     width: fit-content;
     margin-bottom: 2rem;
 }
 
-.thumbnail {
-    max-width: 23rem;
-}
-
-.thumbnail a {
+.thumbnail img {
+    display: flex;
     width: 100%;
-}
-
-.thumbnail a img {
-    width: 100%;
-    height: auto;
+    aspect-ratio: 16/9;
     border-radius: 10px;
 }
 
@@ -365,6 +360,52 @@ hr {
 .thumbnail-details {
     display: flex;
 }
+
+
+
+/*.video {
+    width: fit-content;
+    margin-bottom: 2rem;
+}
+
+.thumbnail {
+    
+    min-width: 20rem;
+    max-width: 30rem;
+}
+
+.thumbnail a {
+    width: 100%;
+    height: 100%;
+}
+
+
+.thumbnail a img {
+    height: auto;
+    width: 100%;
+    
+    border-radius: 10px;
+}
+
+.thumbnail-overlay {
+    position: relative;
+    bottom: 25px ;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.thumbnail-overlay span {
+    color: #fff;
+    background: #232832;
+    font-size: 14px;
+    padding: 1px 4px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.thumbnail-details {
+    display: flex;
+}*/
 
 .profile-image img{
     border-radius: 50%;
