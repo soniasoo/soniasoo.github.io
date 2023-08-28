@@ -340,7 +340,7 @@ hr {
 .thumbnail img {
     display: flex;
     width: 100%;
-    aspect-ratio: 1.85/1;
+    aspect-ratio: 9/5;
     border-radius: 10px;
 }
 
@@ -490,7 +490,7 @@ hr {
 
 .shorts-thumbnail img {
     width: 100%;
-    aspect-ratio: 0.56/1;
+    aspect-ratio: 5/9;
     border-radius: 10px;
 }
 
