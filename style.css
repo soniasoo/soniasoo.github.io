@@ -180,6 +180,8 @@ ul li {
 
 .icon img {
     margin-bottom: 7px;
+    width: 24px;
+    height: 24px;
 }
 
 
@@ -236,6 +238,7 @@ ul li {
 .links a img {
     margin-right: 24px;
     width: 24px;
+    height: auto;
 }
 
 hr {
@@ -410,6 +413,8 @@ hr {
 .profile-image img{
     border-radius: 50%;
     width: 40px;
+    /*aspect-ratio: 1/1;*/
+    height: auto;
     margin-right: 12px;
 }
 
@@ -470,21 +475,22 @@ hr {
     overflow: hidden;
 }
 
-.shorts {
+/*.shorts {
     width: fit-content;
-}
+}*/
 
 .shorts-thumbnail {
     max-width: 9.5rem;
     display: flex;
 }
 
-.shorts-thumbnail a {
+/*.shorts-thumbnail a {
     width: 100%;
-}
+}*/
 
-.shorts-thumbnail a img {
+.shorts-thumbnail img {
     width: 100%;
+    aspect-ratio: 9/16;
     border-radius: 10px;
 }
 
