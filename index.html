@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="So's version of a Youtube clone">
     <title>MyTube</title>
-    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="critical.css">
+    <!-- load non-critical css asynchronously -->
+    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+
     <link rel="shortcut icon" href="images/yt-favicon.ico"/>
 </head>
 
