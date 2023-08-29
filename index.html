@@ -36,6 +36,11 @@
             height: 24px;
         }
 
+        .menu-icon {
+            width: 38px;
+            height: 38px;
+        }
+
         .overlay {
             background: #00000050;
             width: 100%;
@@ -77,7 +82,7 @@
 
         .logo {
             width: 100px;
-            height: auto;
+            height: 34px;
             margin-left: 15px;
             cursor: pointer;
         }
@@ -116,7 +121,7 @@
         }
 
         .nav-middle button img {
-            padding: 0 10px;
+            margin: 0 10px;
         }
 
 
@@ -137,7 +142,7 @@
             margin-left: 25px;
         }
 
-        .user-icon {
+        /*.user-icon {
             width: 40px;
             height: 40px;
             position: relative;
@@ -148,6 +153,20 @@
 
         .user-icon img {
             height: 100%;
+            width: auto;
+            margin-left: -25%;
+        }*/
+
+        .user-icon {
+            width: 40px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 50%;
+            margin-left: 25px;
+        }
+
+        .user-icon img {
+            height: 40px;
             width: auto;
             margin-left: -25%;
         }
@@ -462,8 +481,9 @@
             <div class="search-box">
                 <input type="text" placeholder="Search">
             </div>
-            <button><img src="images/icons8-search.png" alt="search"></button>
-            <img src="images/microphone-icon.png" alt="" class="round-icon">
+            <!--<button><img src="images/icons8-search.png" alt="search"></button>-->
+            <div><button><img src="images/icons8-search.png" alt="search" class="icon"></button></div>
+            <div class="round-icon"><img src="images/microphone-icon.png" alt="" class="icon"></div>
 
         </div>
 
@@ -537,7 +557,7 @@
                     <source srcset="images/channel4.webp" type="image/webp">
                     <img src="images/channel4.jpg" alt="" class="icon subscription-img">
                 </picture>Digitalz</a>
-                <a id="show-subscript" onclick="showSubscriptions()" href="#"><img src="images/arrow-down.png" alt="">Show 2 more</a>
+                <a id="show-subscript" onclick="showSubscriptions()" href="#"><img src="images/arrow-down.png" alt="" class="icon">Show 2 more</a>
                 <a class="subscript hidden" href="#"><picture>
                     <source srcset="images/channel5.webp" type="image/webp">
                     <img src="images/channel5.jpg" alt="" class="icon subscription-img">
