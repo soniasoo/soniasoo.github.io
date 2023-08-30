@@ -5,7 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyTube</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="critical.css"> 
+    <!-- load non-critical css asynchronously -->
+    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    
     <script src="https://kit.fontawesome.com/9674f5e515.js" crossorigin="anonymous"></script>
 </head>
 
